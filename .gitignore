@@ -1,0 +1,17 @@
+# generované a veľké
+nahlady/
+noza-web.zip
+
+# súkromná komunikácia s klientom a prepisy hlasoviek
+podklady/whatsapp_chat_*
+podklady/hlasovky_prepis.md
+podklady/**/*.txt
+podklady/realizacie/_vyradene/
+
+# systém
+__pycache__/
+Thumbs.db
+.DS_Store
+
+# pracovná kópia verejného repa Apoliak7777/Noza (GitHub Pages), plní ju nastroje/nasad.py
+zverejnenie/

@@ -1,0 +1,36 @@
+name: Nasadenie webu
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  nasadenie:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.nasadenie.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Web bez serverových súborov
+        run: |
+          mkdir _site
+          cp -r web/. _site/
+          rm -f _site/kontakt.php _site/.htaccess _site/_headers
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - id: nasadenie
+        uses: actions/deploy-pages@v5

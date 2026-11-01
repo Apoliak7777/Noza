@@ -1,0 +1,198 @@
+{
+  "_navod": "Fotky každej realizácie patria do podklady/realizacie/<id>/ (jpg, png, webp, heic). Poradie = podľa názvu súboru. Potom: python nastroje/realizacie.py. Texty (nazov, stitok = nadpis nad kartou, popis) sa menia tu, pre SK aj DE. fotky_navyse = fotky z inej cesty s vlastným popisom.",
+  "projekty": [
+    {
+      "id": "kempinski",
+      "obal": "019_143522.jpg",
+      "sk": {
+        "slug": "mnichov-kempinski",
+        "nazov": "Hotel Kempinski",
+        "stitok": "Mnichov",
+        "popis": "Interiérové práce v hoteli Kempinski v Mnichove: sadrokartónové priečky, obklady a podhľady v izbách aj na chodbách, vrátane oblých stropov."
+      },
+      "de": {
+        "slug": "muenchen-kempinski",
+        "nazov": "Hotel Kempinski",
+        "stitok": "München",
+        "popis": "Innenausbau im Hotel Kempinski in München: Trockenbauwände, Verkleidungen und Abhangdecken in Zimmern und Fluren, einschließlich runder Deckenelemente."
+      }
+    },
+    {
+      "id": "buergerhospital",
+      "obal": "017_144101.jpg",
+      "sk": {
+        "slug": "buergerhospital",
+        "nazov": "Bürgerhospital",
+        "stitok": "Nemocnica",
+        "popis": "Sadrokartónové konštrukcie, revízne otvory a obklady stien a stropov v nemocnici Bürgerhospital, vo vstupnej hale aj na chodbách."
+      },
+      "de": {
+        "slug": "buergerhospital",
+        "nazov": "Bürgerhospital",
+        "stitok": "Krankenhaus",
+        "popis": "Trockenbaukonstruktionen, Revisionsöffnungen sowie Wand- und Deckenverkleidungen im Bürgerhospital, im Eingangsbereich und in den Fluren."
+      }
+    },
+    {
+      "id": "konstanz",
+      "obal": "022_144335.jpg",
+      "sk": {
+        "slug": "konstanz",
+        "nazov": "Konstanz",
+        "stitok": "Interiér",
+        "popis": "Sadrokartónové steny, podhľady a dokončovacie práce v izbách, na chodbách aj v lobby novej budovy v Konstanzi."
+      },
+      "de": {
+        "slug": "konstanz",
+        "nazov": "Konstanz",
+        "stitok": "Innenausbau",
+        "popis": "Trockenbauwände, Abhangdecken und Fertigstellungsarbeiten in Zimmern, Fluren und in der Lobby eines Neubaus in Konstanz."
+      }
+    },
+    {
+      "id": "straubing",
+      "obal": "003_143638.jpg",
+      "sk": {
+        "slug": "straubing",
+        "nazov": "Straubing",
+        "stitok": "Vzduchotechnika",
+        "popis": "Montáž vzduchotechniky podľa 3D modelu: vzduchotechnické jednotky, hranaté a kruhové potrubie v technických miestnostiach aj pod stropom."
+      },
+      "de": {
+        "slug": "straubing",
+        "nazov": "Straubing",
+        "stitok": "Lüftungstechnik",
+        "popis": "Montage der Lüftungstechnik nach 3D-Modell: Lüftungsgeräte, Rechteck- und Rundkanäle in Technikräumen und unter der Decke."
+      }
+    },
+    {
+      "id": "sadrokarton",
+      "obal": "040_142614.jpg",
+      "sk": {
+        "slug": "sadrokarton-kazetove-stropy",
+        "nazov": "Sadrokartón a kazetové stropy",
+        "stitok": "Odbor",
+        "popis": "Od nosného roštu po hotový strop: kazetové a minerálne podhľady, sadrokartónové priečky, podkrovia a predsadené steny."
+      },
+      "de": {
+        "slug": "trockenbau-kassettendecken",
+        "nazov": "Trockenbau und Kassettendecken",
+        "stitok": "Gewerk",
+        "popis": "Von der Unterkonstruktion bis zur fertigen Decke: Kassetten- und Mineralfaserdecken, Trennwände, Dachgeschosse und Vorsatzschalen."
+      }
+    },
+    {
+      "id": "vzduchotechnika",
+      "obal": "002_142831.jpg",
+      "sk": {
+        "slug": "vzduchotechnika",
+        "nazov": "Vzduchotechnika",
+        "stitok": "Odbor",
+        "popis": "Rozvody vzduchotechniky v halách, kanceláriách a technických priestoroch: hranaté aj kruhové potrubie, závesy, práca z plošín a osadenie jednotiek žeriavom."
+      },
+      "de": {
+        "slug": "lueftungstechnik",
+        "nazov": "Lüftungstechnik",
+        "stitok": "Gewerk",
+        "popis": "Lüftungsleitungen in Hallen, Büros und Technikräumen: Rechteck- und Rundkanäle, Abhängungen, Arbeit von Hubbühnen und Kranmontage von Geräten."
+      },
+      "fotky_navyse": [
+        {
+          "subor": "../fotky_povodne/489C16F6-E6BF-465D-A0E6-6216DD855336.webp",
+          "sk": "Montáž VZT rozvodov z nožnicovej plošiny",
+          "de": "Montage von Lüftungskanälen von der Scherenbühne"
+        },
+        {
+          "subor": "../fotky_povodne/76340F61-5444-49D8-A19C-F1A9B368EC0C.webp",
+          "sk": "Osadenie VZT jednotky žeriavom",
+          "de": "Kranmontage eines Lüftungsgeräts"
+        },
+        {
+          "subor": "../fotky_povodne/23A11BE0-A1E9-497B-B57B-8577071527EB.webp",
+          "sk": "Hranaté potrubie pod stropom haly",
+          "de": "Rechteckkanal unter der Hallendecke"
+        },
+        {
+          "subor": "../fotky_povodne/0E3DAF90-54B4-4A3A-BD61-BD864F0D95D6.webp",
+          "sk": "Rozvody a sadrokartónové steny",
+          "de": "Leitungen und Trockenbauwände"
+        },
+        {
+          "subor": "../fotky_povodne/523B484D-A05F-442C-B07F-249F0D8BB945.webp",
+          "sk": "Detail zaveseného potrubia pri väzníku",
+          "de": "Detail: abgehängter Kanal am Binder"
+        },
+        {
+          "subor": "../fotky_povodne/A768640E-0CD0-425B-9E15-BA09616D1669.webp",
+          "sk": "Príprava potrubných dielov v hale",
+          "de": "Vorbereitung der Kanalteile in der Halle"
+        },
+        {
+          "subor": "../fotky_povodne/20705EFD-E545-45A8-B725-86D250207A71.webp",
+          "sk": "Rozvody v priemyselnej hale",
+          "de": "Leitungen in einer Industriehalle"
+        },
+        {
+          "subor": "../fotky_povodne/16BF1081-7091-4520-B201-0F98D404D5FD.webp",
+          "sk": "Spiro potrubie a odbočky",
+          "de": "Wickelfalzrohr und Abzweige"
+        },
+        {
+          "subor": "../fotky_povodne/681206FF-F5E9-4DD2-B77C-7C1D2C6F2C76.webp",
+          "sk": "Rozvody v administratívnej časti",
+          "de": "Leitungen im Bürobereich"
+        },
+        {
+          "subor": "../fotky_povodne/546DC383-B44B-4DA4-A124-2B28D7942477.webp",
+          "sk": "Hala pri večernej zmene",
+          "de": "Halle in der Abendschicht"
+        },
+        {
+          "subor": "../fotky_povodne/2F472E78-F97A-49EE-9E60-32F1B4A026B6.webp",
+          "sk": "Kruhové potrubie pod stropom",
+          "de": "Rundkanal unter der Decke"
+        },
+        {
+          "subor": "../fotky_povodne/40DD1498-9DD6-481E-B6F6-C988B1C96DFF.webp",
+          "sk": "Práca z nožnicovej plošiny",
+          "de": "Arbeit von der Scherenbühne"
+        },
+        {
+          "subor": "../fotky_povodne/51DCFC71-2818-480C-AB66-41E41DF1FB03.webp",
+          "sk": "Rozvody na chodbe",
+          "de": "Leitungen im Flur"
+        },
+        {
+          "subor": "../fotky_povodne/3C7564FC-77D1-4713-AE06-87585663087B.webp",
+          "sk": "Hranaté potrubie s tvarovkami",
+          "de": "Rechteckkanal mit Formteilen"
+        },
+        {
+          "subor": "../fotky_povodne/5F7908F3-7063-4D72-8E4A-E3931261A977.webp",
+          "sk": "Závesy a potrubie",
+          "de": "Abhängungen und Kanal"
+        },
+        {
+          "subor": "../fotky_povodne/33C7F408-27C3-4F24-9578-43011F69B899.webp",
+          "sk": "Kĺbová plošina v hale",
+          "de": "Gelenkteleskopbühne in der Halle"
+        },
+        {
+          "subor": "../fotky_povodne/450960BA-4681-49F1-A2F4-5D67CDDE5D64.webp",
+          "sk": "Rozvody pod stropom",
+          "de": "Leitungen unter der Decke"
+        },
+        {
+          "subor": "../fotky_povodne/57917CEB-B93B-44E5-82D0-C39BA9BFA464.webp",
+          "sk": "Montáž pri umelom osvetlení",
+          "de": "Montage bei Kunstlicht"
+        },
+        {
+          "subor": "../fotky_povodne/826F6D97-FA45-4F7F-A8A6-3394FDF17D54.webp",
+          "sk": "Montáž na schodisku",
+          "de": "Montage im Treppenhaus"
+        }
+      ]
+    }
+  ]
+}

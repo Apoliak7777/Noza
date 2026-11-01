@@ -1,0 +1,57 @@
+# NOZA — nastavenia pre ostrý hosting s Apache (Websupport). Cloudflare Pages tento súbor nečíta, tam platí _headers.
+# Každý blok je v <IfModule>, aby chýbajúci modul nezhodil celý web chybou 500.
+
+ErrorDocument 404 /404.html
+ErrorDocument 410 /404.html
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # jedna adresa pre Google: noza.sk → https://www.noza.sk (canonical, sitemap aj hreflang sú na www)
+  RewriteCond %{HTTP_HOST} ^noza\.sk$ [NC]
+  RewriteRule ^ https://www.noza.sk%{REQUEST_URI} [R=301,L]
+
+  # http → https len vtedy, keď to nginx pred Apache výslovne povie; %{HTTPS} je za proxy vždy off a zacyklil by sa
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  RewriteRule ^_headers$ - [G,L]
+
+  # Zvyšky napadnutého starého WordPressu (10/2026 podstrkoval Googlu tisícky japonských spamových stránok).
+  # 410 = stránka zmizla navždy, Google ju vyradí rýchlejšie ako pri 404. Návštevník vidí bežnú stránku 404.html.
+  # a) koreň s parametrom, ktorý nie je sledovací (utm_, fbclid, gclid …): /?top=…, /?shop/…, /?feed=…
+  RewriteCond %{QUERY_STRING} .
+  RewriteCond %{QUERY_STRING} !^((utm_[a-z_]+|fbclid|gclid|gbraid|wbraid|msclkid|mc_cid|mc_eid|_ga|_gl)=[^&]*(&|$))+$ [NC]
+  RewriteRule ^(index\.(html|php))?$ - [G,L]
+  # b) čokoľvek, čo na webe nie je: /buy-…, /shops/…, /wp-admin, staré sitemapy …
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ - [G,L]
+  # c) priečinok bez index.html (img/, fonts/) — nevypisovať jeho obsah
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteRule ^ - [G,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header set Cache-Control "no-cache"
+  <FilesMatch "\.(webp|jpe?g|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.woff2$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json application/xml image/svg+xml
+</IfModule>
