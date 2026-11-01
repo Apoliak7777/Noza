@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /kontakt.php
+Sitemap: https://www.noza.sk/sitemap.xml

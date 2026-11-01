@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.noza.sk/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.noza.sk/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.noza.sk/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/mnichov-kempinski/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/mnichov-kempinski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/muenchen-kempinski/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/muenchen-kempinski/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/mnichov-kempinski/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/muenchen-kempinski/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/buergerhospital/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/buergerhospital/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/buergerhospital/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/buergerhospital/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/buergerhospital/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/buergerhospital/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/konstanz/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/konstanz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/konstanz/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/konstanz/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/konstanz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/konstanz/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/straubing/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/straubing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/straubing/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/straubing/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/straubing/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/straubing/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/sadrokarton-kazetove-stropy/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/sadrokarton-kazetove-stropy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/trockenbau-kassettendecken/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/trockenbau-kassettendecken/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/sadrokarton-kazetove-stropy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/trockenbau-kassettendecken/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/vzduchotechnika/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/vzduchotechnika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/lueftungstechnik/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/lueftungstechnik/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/vzduchotechnika/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/lueftungstechnik/"/>
+  </url>
+</urlset>
