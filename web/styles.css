@@ -309,7 +309,7 @@ body.menu-open .burger span::after { transform: translateY(-6px) rotate(-45deg);
 .crumbs { display: flex; flex-wrap: wrap; gap: .5rem; font-size: .9rem; color: var(--muted); margin-bottom: 1.4rem; }
 .crumbs a { color: var(--brand-700); font-weight: 650; text-decoration: none; }
 .crumbs a:hover { text-decoration: underline; }
-.projekt-head { display: grid; gap: .8rem; max-width: 62ch; margin-bottom: 1.8rem; }
+.projekt-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: .8rem; max-width: 62ch; margin-bottom: 1.8rem; }
 .projekt-head h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
 .projekt-head .eyebrow { margin-bottom: 0; }
 .projekt-meta { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: 0; color: var(--muted); }
@@ -428,7 +428,7 @@ body.menu-open .burger span::after { transform: translateY(-6px) rotate(-45deg);
 
 /* ---- responzivita ---- */
 @media (max-width: 1024px) {
-  .hero .wrap { grid-template-columns: 1fr; }
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
   .spec { grid-template-columns: repeat(2, 1fr); }
   .spec div + div { border-top: 0; }
   .spec div:nth-child(even) { border-left: 1px solid rgba(255, 255, 255, .16); }
@@ -450,6 +450,8 @@ body.menu-open .burger span::after { transform: translateY(-6px) rotate(-45deg);
   .top.is-solid .lang { border-color: rgba(255, 255, 255, .5); }
   .top.is-solid .lang a[aria-current="true"] { background: #fff; color: var(--brand-900); }
   body.menu-open .nav { opacity: 1; visibility: visible; transform: none; }
+  /* backdrop-filter by z hlavičky urobil obal pre fixed menu – po posune by menu malo len výšku hlavičky */
+  .top.is-solid { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255, 255, 255, .98); }
   body.menu-open { overflow: hidden; }
   .burger { display: inline-flex; position: relative; z-index: 45; }
   body.menu-open .top { color: #fff; }
@@ -472,4 +474,13 @@ body.menu-open .burger span::after { transform: translateY(-6px) rotate(-45deg);
   .foot .wrap { grid-template-columns: 1fr; }
   .brand small { display: none; }
   .actions .btn { width: 100%; }
+  /* dlhé nemecké slová (Anbieterkennzeichnung, Identifikationsnummer …) sa delia, aby stránka neuhýbala do strany */
+  :lang(de) .prose h1, :lang(de) .prose td { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
+  .prose table { table-layout: fixed; }
+}
+@media (max-width: 359px) {
+  /* najužšie mobily: dlhé slová v nadpisoch (Montageteams, Kassettendecken, Vzduchotechnika) sa musia zmestiť */
+  :lang(de) .hero h1, :lang(de) .projekt-head h1 { -webkit-hyphens: auto; hyphens: auto; }
+  .projekt-head h1 { font-size: 2rem; }
+  h1 { overflow-wrap: break-word; }
 }

@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title NOZA 4M - web (localhost:8097)
+title NOZA - web (localhost:8097)
 pushd "%~dp0web"
 echo.
 echo   Web bezi na  http://localhost:8097/sk/   (nemecky: /de/)

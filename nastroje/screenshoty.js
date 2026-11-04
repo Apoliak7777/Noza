@@ -1,4 +1,5 @@
-/* Náhľady webu pre klienta + automatická kontrola (konzola, chýbajúce súbory, formulár, galéria, menu).
+/* Náhľady webu pre klienta + automatická kontrola (konzola, chýbajúce súbory, formulár, galéria, menu,
+ * na úzkych mobiloch 320/360/390 px aj pretečenie do strany a menu otvorené po posune).
  *
  * Spustenie (web musí bežať, napr. cez SPUSTIT_WEB.bat):
  *   node nastroje\screenshoty.js            (BASE=http://localhost:8097 predvolene)
@@ -176,6 +177,36 @@ async function odhal(page) {
       console.log("menu otvorené:", await mpage.evaluate(() => document.body.classList.contains("menu-open")));
     }
     await mctx.close();
+  }
+
+  // úzke mobily: stránka nesmie uhýbať do strany a menu otvorené po posune musí pokryť celú obrazovku
+  // (bez isMobile – mobilné okno by sa roztiahlo na šírku obsahu a pretečenie by nebolo vidieť)
+  {
+    const vctx = await browser.newContext({ viewport: { width: 390, height: 760 } });
+    const vpage = await vctx.newPage();
+    const zoznam = ["/sk/", "/de/", "/sk/ochrana-osobnych-udajov.html", "/de/datenschutz.html", "/de/impressum.html", "/404.html"];
+    for (const j of ["sk", "de"]) {
+      await vpage.goto(`${BASE}/${j}/`, { waitUntil: "load" });
+      zoznam.push(...(await vpage.evaluate(() => Array.from(document.querySelectorAll(".projekty .projekt")).map((a) => new URL(a.href).pathname))));
+    }
+    let siroke = 0, zleMenu = 0;
+    for (const sirka of [320, 360, 390]) {
+      await vpage.setViewportSize({ width: sirka, height: 760 });
+      for (const u of zoznam) {
+        await vpage.goto(BASE + u, { waitUntil: "load" });
+        const navyse = await vpage.evaluate((w) => document.documentElement.scrollWidth - w, sirka);
+        if (navyse > 0) { siroke++; chyby.push(`[mobil ${sirka}px] ${u} je o ${navyse}px širšia ako obrazovka`); }
+        if (sirka !== 390 || !(await vpage.$(".burger"))) continue;
+        await vpage.evaluate(() => window.scrollTo(0, 1200));
+        await vpage.waitForTimeout(150);
+        await vpage.click(".burger");
+        await vpage.waitForTimeout(450);
+        const cele = await vpage.evaluate(() => { const r = document.querySelector(".nav").getBoundingClientRect(); return r.top <= 0 && r.bottom >= window.innerHeight; });
+        if (!cele) { zleMenu++; chyby.push(`[mobilné menu] ${u}: po posune nepokryje celú obrazovku`); }
+      }
+    }
+    console.log(`mobil 320/360/390 px: ${zoznam.length} stránok, širších ako obrazovka: ${siroke}, zlé menu po posune: ${zleMenu}`);
+    await vctx.close();
   }
 
   // právne stránky a koreň
