@@ -13,6 +13,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.noza.sk/"/>
   </url>
   <url>
+    <loc>https://www.noza.sk/sk/realizacie/rekonstrukcia-vily-hofheim/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/rekonstrukcia-vily-hofheim/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/sanierung-villa-hofheim/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/sanierung-villa-hofheim/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/rekonstrukcia-vily-hofheim/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/sanierung-villa-hofheim/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/sk/realizacie/multifunkcna-budova-hofheim/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/multifunkcna-budova-hofheim/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/multifunktionsgebaeude-hofheim/"/>
+  </url>
+  <url>
+    <loc>https://www.noza.sk/de/referenzen/multifunktionsgebaeude-hofheim/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/multifunkcna-budova-hofheim/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/multifunktionsgebaeude-hofheim/"/>
+  </url>
+  <url>
     <loc>https://www.noza.sk/sk/realizacie/mnichov-kempinski/</loc>
     <xhtml:link rel="alternate" hreflang="sk" href="https://www.noza.sk/sk/realizacie/mnichov-kempinski/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.noza.sk/de/referenzen/muenchen-kempinski/"/>

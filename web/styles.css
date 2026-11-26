@@ -301,6 +301,12 @@ body.menu-open .burger span::after { transform: translateY(-6px) rotate(-45deg);
 .projekt-pocet { display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; font-weight: 600; color: var(--on-dark); }
 .projekt-pocet svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
 .projekt:hover .projekt-pocet svg { transform: translateX(4px); }
+/* realizácie navrchu („hore“ v projekty.json): na počítači dve väčšie karty vedľa seba, pod nimi ostatné po troch */
+.projekty-hore { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.projekty-hore > .projekt { grid-column: span 2; }
+.projekty-hore > .projekt-hore { grid-column: span 3; aspect-ratio: 16 / 10; }
+.projekt-hore .projekt-body { padding: 1.5rem 1.6rem 1.55rem; }
+.projekt-hore .projekt-nazov { font-size: 1.75rem; }
 .projekty-male { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 .projekty-male .projekt-body { padding: 1rem 1.05rem 1.05rem; }
 .projekty-male .projekt-nazov { font-size: 1.15rem; }
@@ -435,6 +441,10 @@ body.menu-open .burger span::after { transform: translateY(-6px) rotate(-45deg);
   .spec div:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .16); }
   .pillars, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .projekty { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projekty-hore > .projekt, .projekty-hore > .projekt-hore { grid-column: auto; }
+  .projekty-hore > .projekt-hore { aspect-ratio: 4 / 3; }
+  .projekt-hore .projekt-body { padding: 1.2rem 1.3rem 1.25rem; }
+  .projekt-hore .projekt-nazov { font-size: 1.4rem; }
   .foot .wrap { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 860px) {

@@ -1,6 +1,40 @@
 {
-  "_navod": "Fotky každej realizácie patria do podklady/realizacie/<id>/ (jpg, png, webp, heic). Poradie = podľa názvu súboru. Potom: python nastroje/realizacie.py. Texty (nazov, stitok = nadpis nad kartou, popis) sa menia tu, pre SK aj DE. fotky_navyse = fotky z inej cesty s vlastným popisom.",
+  "_navod": "Fotky každej realizácie patria do podklady/realizacie/<id>/ (jpg, png, webp, heic). Poradie = podľa názvu súboru. Potom: python nastroje/realizacie.py. Texty (nazov, stitok = nadpis nad kartou, popis) sa menia tu, pre SK aj DE. fotky_navyse = fotky z inej cesty s vlastným popisom. hore = true: realizácia ide na hlavnej stránke navrch ako väčšia karta (na počítači dve vedľa seba), obal = meno súboru fotky na karte.",
   "projekty": [
+    {
+      "id": "hofheim-vila",
+      "hore": true,
+      "obal": "089_152716.jpg",
+      "sk": {
+        "slug": "rekonstrukcia-vily-hofheim",
+        "nazov": "Rekonštrukcia vily",
+        "stitok": "Hofheim am Taunus",
+        "popis": "Kompletná rekonštrukcia vily od búracích prác po hotové interiéry: sadrokartónové stropy s izoláciou, kúpeľne, podlahové kúrenie, drevené podlahy, kuchyňa, schodisko, nová presklená miestnosť namiesto zimnej záhrady, terasa a záhrada."
+      },
+      "de": {
+        "slug": "sanierung-villa-hofheim",
+        "nazov": "Sanierung einer Villa",
+        "stitok": "Hofheim am Taunus",
+        "popis": "Komplettsanierung einer Villa vom Rückbau bis zum fertigen Innenausbau: Trockenbaudecken mit Dämmung, Bäder, Fußbodenheizung, Holzböden, Küche, Treppe, ein neuer verglaster Raum anstelle des Wintergartens, Terrasse und Garten."
+      }
+    },
+    {
+      "id": "hofheim-budova",
+      "hore": true,
+      "obal": "005_161614.jpg",
+      "sk": {
+        "slug": "multifunkcna-budova-hofheim",
+        "nazov": "Rekonštrukcia multifunkčnej budovy",
+        "stitok": "Hofheim am Taunus",
+        "popis": "Kompletná rekonštrukcia viacpodlažnej budovy: búracie práce, oceľové nosníky a nové podkrovie, elektroinštalácia, okná s roletami, sadrokartón, podlahy, maľovanie aj nová fasáda."
+      },
+      "de": {
+        "slug": "multifunktionsgebaeude-hofheim",
+        "nazov": "Sanierung eines Multi\u00adfunktions\u00adgebäudes",
+        "stitok": "Hofheim am Taunus",
+        "popis": "Komplettsanierung eines mehrgeschossigen Gebäudes: Rückbau, Stahlträger und neuer Dachausbau, Elektroinstallation, Fenster mit Rollläden, Trockenbau, Böden, Malerarbeiten und neue Fassade."
+      }
+    },
     {
       "id": "kempinski",
       "obal": "019_143522.jpg",

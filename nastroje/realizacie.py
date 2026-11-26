@@ -6,6 +6,8 @@ Vstup:
   podklady/realizacie/projekty.json   zoznam realizácií, poradie, texty SK/DE (nazov, stitok, popis)
   podklady/realizacie/<id>/           fotky realizácie (jpg, jpeg, png, webp, heic), poradie podľa názvu súboru
   "fotky_navyse" v projekty.json      fotky z inej cesty aj s popisom (staré fotky zo starého noza.sk)
+  "hore": true v projekty.json        realizácia ide na hlavnej stránke navrch ako väčšia karta (na počítači dve vedľa
+                                      seba nad mriežkou 3 × N), obal sa vyrobí väčší; poradie určuje projekty.json
 
 Výstup:
   web/img/realizacie/<id>/NNN.webp    veľká verzia (dlhšia strana max 2400 px) – otvára sa v lightboxe a v plnom rozlíšení
@@ -39,6 +41,7 @@ WEB = os.path.join(KDE, "web")
 DOMENA = "https://www.noza.sk"
 PRIPONY = (".jpg", ".jpeg", ".png", ".webp", ".heic", ".heif")
 VELKA, MALA, OBAL = 2400, 640, (960, 720)
+OBAL_HORE = (1280, 960)  # väčšia karta navrchu je na počítači asi 1,5× širšia (~600 px, na Retine 1200 px)
 PRAH_DUPLICITY = 6  # rozdiel bitov dHash, pod ktorým sú dve fotky tá istá fotka
 
 JAZYKY = {
@@ -174,8 +177,8 @@ def spracuj_fotky(projekty):
             else:
                 obal_i = min(max(int(obal), 1), len(polozky)) - 1
             im = nacitaj(polozky[obal_i]["zdroj"])
-            ImageOps.fit(im, OBAL, Image.LANCZOS, centering=(0.5, float(p.get("obal_vyska", 0.45)))).save(
-                os.path.join(ciel, "obal.webp"), "WEBP", quality=78, method=4)
+            ImageOps.fit(im, velkost_obalu(p), Image.LANCZOS, centering=(0.5, float(p.get("obal_vyska", 0.45)))).save(
+                os.path.join(ciel, "obal.webp"), "WEBP", quality=72 if p.get("hore") else 78, method=4)
         vysledok[p["id"]] = polozky
         print(f"  {p['id']}: {len(polozky)} fotiek")
     return vysledok
@@ -198,11 +201,16 @@ def posun_odkazy(fragment, predpona):
     return re.sub(r'(href|src)="([^"]*)"', nahrad, fragment)
 
 
-def karta(p, jazyk, pocet, odkaz, obrazok, reveal=True):
+def velkost_obalu(p):
+    return OBAL_HORE if p.get("hore") else OBAL
+
+
+def karta(p, jazyk, pocet, odkaz, obrazok, reveal=True, hore=False):
     t = p[jazyk]
-    trieda = "projekt reveal" if reveal else "projekt"
+    trieda = "projekt" + (" projekt-hore" if hore else "") + (" reveal" if reveal else "")
+    sirka, vyska = velkost_obalu(p)
     return (f'<a class="{trieda}" href="{odkaz}">'
-            f'<img src="{obrazok}" alt="" loading="lazy" width="{OBAL[0]}" height="{OBAL[1]}">'
+            f'<img src="{obrazok}" alt="" loading="lazy" width="{sirka}" height="{vyska}">'
             f'<span class="projekt-body"><span class="projekt-stitok">{esc(t["stitok"])}</span>'
             f'<span class="projekt-nazov">{esc(t["nazov"])}</span>'
             f'<span class="projekt-pocet">{pocet_fotiek(pocet, jazyk)} {SIPKA}</span></span></a>')
@@ -314,11 +322,13 @@ def karty_na_hlavnu(projekty, fotky, jazyk):
     s_fotkami = [p for p in projekty if fotky.get(p["id"])]
     spolu = sum(len(fotky[p["id"]]) for p in s_fotkami)
     karty = "\n        ".join(
-        karta(p, jazyk, len(fotky[p["id"]]), f"{T['cesta']}/{p[jazyk]['slug']}/", f"../img/realizacie/{p['id']}/obal.webp")
+        karta(p, jazyk, len(fotky[p["id"]]), f"{T['cesta']}/{p[jazyk]['slug']}/", f"../img/realizacie/{p['id']}/obal.webp",
+              hore=bool(p.get("hore")))
         for p in s_fotkami)
+    mriezka = "projekty projekty-hore" if any(p.get("hore") for p in s_fotkami) else "projekty"
     return (f'<!-- REALIZACIE:START (generuje nastroje/realizacie.py, ručne needitovať) -->\n'
             f'      <p class="stat-line">{pocet_realizacii(len(s_fotkami), jazyk)} · {pocet_fotiek(spolu, jazyk)}</p>\n'
-            f'      <div class="projekty">\n        {karty}\n      </div>\n'
+            f'      <div class="{mriezka}">\n        {karty}\n      </div>\n'
             f'      <!-- REALIZACIE:END -->')
 
 
